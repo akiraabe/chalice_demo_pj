@@ -1,0 +1,64 @@
+{
+  "Records": [
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {
+            "S": "id1"
+          },
+          "sub": {
+            "S": "LOCAL_USER"
+          },
+          "race": {
+            "S": "3"
+          },
+          "team": {
+            "S": "TeamA"
+          },
+          "section": {
+            "S": "1"
+          },
+          "runner_name": {
+            "S": "あべべ"
+          },
+          "result_time": {
+            "S": "00:23:01"
+          },
+          "description": {
+            "S": "Memo1"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {
+            "S": "id2"
+          },
+          "sub": {
+            "S": "LOCAL_USER"
+          },
+          "race": {
+            "S": "3"
+          },
+          "team": {
+            "S": "TeamA"
+          },
+          "section": {
+            "S": "2"
+          },
+          "runner_name": {
+            "S": "test-runner"
+          },
+          "result_time": {
+            "S": "00:23:11"
+          },
+          "description": {
+            "S": "Memo2"
+          }
+        }
+      }
+    }
+  ]
+}
