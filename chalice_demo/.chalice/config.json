@@ -11,8 +11,8 @@
     },
     "local": {
       "environment_variables": {
-        "IS_LOCAL": true,
-        "DB_ENDPOINT": "localhost:8000",
+        "IS_LOCAL": "true",
+        "DB_ENDPOINT": "http://localhost:8000",
         "DB_TABLE_NAME": "LocalRecords"
       }
     }
