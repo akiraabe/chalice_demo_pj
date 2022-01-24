@@ -1,6 +1,6 @@
 import os
 import boto3
-from boto3.dynamodb.conditions import Key,Attr
+from boto3.dynamodb.conditions import Key, Attr
 import uuid
 
 
@@ -14,6 +14,7 @@ def _get_database():
         print('*** DB_ENDPOINT指定なし ***')
         return boto3.resource('dynamodb')
 
+
 def get_all_records():
     print('get_all_records****')
     table = _get_database().Table(os.environ['DB_TABLE_NAME'])
@@ -24,12 +25,14 @@ def get_all_records():
     response = table.scan()
     return response['Items']
 
+
 def query_records(runner_name):
     table = _get_database().Table(os.environ['DB_TABLE_NAME'])
     response = table.scan(
         FilterExpression=Attr('runner_name').eq(runner_name)
     )
     return response['Items']
+
 
 def get_record(record_id):
     table = _get_database().Table(os.environ['DB_TABLE_NAME'])
@@ -76,6 +79,7 @@ def update_record(record_id, changes):
         ReturnValues='ALL_NEW'
     )
     return result['Attributes']
+
 
 def delete_record(record_id):
     table = _get_database().Table(os.environ['DB_TABLE_NAME'])

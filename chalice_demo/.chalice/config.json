@@ -8,6 +8,13 @@
         "DB_TABLE_NAME": "Records"
       },
       "autogen_policy": false
+    },
+    "local": {
+      "environment_variables": {
+        "IS_LOCAL": true,
+        "DB_ENDPOINT": "localhost:8000",
+        "DB_TABLE_NAME": "LocalRecords"
+      }
     }
   }
 }

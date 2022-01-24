@@ -47,6 +47,15 @@ def create_record():
     record['sub'] = sub
     return database.create_record(record)
 
+@app.route('/records/{record_id}', methods=['PUT'], cors=True)
+def update_record(record_id):
+    changes = app.current_request.json_body
+    return database.update_record(record_id, changes)
+
+@app.route('/records/{record_id}', methods=['DELETE'], cors=True)
+def delete_record(record_id):
+    return database.delete_record(record_id)
+
 def get_sub():
     if os.environ.get('IS_LOCAL'):
         return 'LOCAL_USER'
