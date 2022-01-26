@@ -36,9 +36,8 @@ def query_records(runner_name):
 
 def get_record(record_id):
     table = _get_database().Table(os.environ['DB_TABLE_NAME'])
-    response = table.query(KeyConditionExpression=Key('id').eq(record_id))
-    items = response['Items']
-    return items[0] if items else None
+    response = table.get_item(Key={'id': record_id})
+    return response['Item']
 
 
 def create_record(record):
